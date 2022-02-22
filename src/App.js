@@ -7,6 +7,7 @@ import SecondComponent from './Components/ClassComponent/ClassComponent2';
 import FunctionComponent from './Components/FunctionalComponent/FunctionalComponent';
 import EmployeeParent from './Components/Props/FunctionProps/EmployeeParent';
 import ClassEmployeeParent from './Components/Props/ClassProps/EmployeeParent';
+import StateOne from './ReactState/state1';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/classprops" element={<ClassEmployeeParent />} />
           <Route exact path="/function" element={<FunctionComponent />} />
           <Route exact path="/functionprops" element={<EmployeeParent />} />
+          <Route exact path="/state1" element={<StateOne />} />
         </Routes>
       </BrowserRouter>
     </div>

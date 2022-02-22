@@ -1,0 +1,8 @@
+What is State ?
+
+1. React has another special built-in object called state,
+which allows components to create and manage there own data So unlike
+props components cannot pass data with state, but they can create and 
+manage it internally.
+
+2. state is what allows you to create components that are dynamic and interactive.

@@ -47,6 +47,11 @@ const Header = () => {
                   Function Props
                 </Link>
               </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/state1">
+                  State 1
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
