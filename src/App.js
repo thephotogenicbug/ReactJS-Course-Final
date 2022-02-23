@@ -7,13 +7,13 @@ import SecondComponent from './Components/ClassComponent/ClassComponent2';
 import FunctionComponent from './Components/FunctionalComponent/FunctionalComponent';
 import EmployeeParent from './Components/Props/FunctionProps/EmployeeParent';
 import ClassEmployeeParent from './Components/Props/ClassProps/EmployeeParent';
-import StateOne from './ReactState/state1';
-import StateTwo from './ReactState/state2';
-import StateThree from './ReactState/state3';
-import StateFour from './ReactState/state4';
-import StateFive from './ReactState/state5';
-import StateSix from './ReactState/state6';
-import StateSeven from './ReactState/state7';
+import StateOne from './Components/ReactState/state1';
+import StateTwo from './Components/ReactState/state2';
+import StateThree from './Components/ReactState/state3';
+import StateFour from './Components/ReactState/state4';
+import StateFive from './Components/ReactState/state5';
+import StateSix from './Components/ReactState/state6';
+import StateSeven from './Components/ReactState/state7';
 
 
 function App() {
