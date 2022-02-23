@@ -4,15 +4,20 @@ import React, { Component } from "react";
 class StateOne extends Component {
   constructor() {
     super();
+    // Must initialize state first
     this.state = {
       counter: 5,
     };
   }
 
+  // method 
+  // setState is asynchronous! This function gets called, setState is a pre-defined method 
+  // it used to modify the state from initial state
   One = () => {
     this.setState({
       counter: this.state.counter + 5,
     });
+    console.log("Job Done !")
   };
 
   Two = () => {
