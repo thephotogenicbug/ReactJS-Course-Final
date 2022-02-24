@@ -14,8 +14,8 @@ import StateFour from "./Components/ReactState/state4";
 import StateFive from "./Components/ReactState/state5";
 import StateSix from "./Components/ReactState/state6";
 import StateSeven from "./Components/ReactState/state7";
-import Event from "./ReactJSEvents/FunctionBasedEvent";
-import ClassBasedEvent from "./ReactJSEvents/ClassBasedEvent";
+import Event from "./Components/ReactJSEvents/FunctionBasedEvent";
+import ClassBasedEvent from "./Components/ReactJSEvents/ClassBasedEvent";
 
 function App() {
   return (
