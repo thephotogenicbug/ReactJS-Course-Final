@@ -16,6 +16,11 @@ import StateSix from "./Components/ReactState/state6";
 import StateSeven from "./Components/ReactState/state7";
 import Event from "./Components/ReactJSEvents/FunctionBasedEvent";
 import ClassBasedEvent from "./Components/ReactJSEvents/ClassBasedEvent";
+import Hooks from "./Components/ReactHooks/Hooks";
+import HooksOne from "./Components/ReactHooks/HooksOne";
+import HooksTwo from "./Components/ReactHooks/HooksTwo";
+import HooksThree from "./Components/ReactHooks/HooksThree";
+import HooksFour from "./Components/ReactHooks/HooksFour";
 
 function App() {
   return (
@@ -37,6 +42,11 @@ function App() {
           <Route exact path="/state7" element={<StateSeven />} />
           <Route exact path="/event" element={<Event />} />
           <Route exact path="/classevent" element={<ClassBasedEvent />} />
+          <Route exact path="/hooks" element={<Hooks />} />
+          <Route exact path="/hooks1" element={<HooksOne />} />
+          <Route exact path="/hooks2" element={<HooksTwo />} />
+          <Route exact path="/hooks3" element={<HooksThree />} />
+          <Route exact path="/hooks4" element={<HooksFour />} />
         </Routes>
       </BrowserRouter>
     </div>

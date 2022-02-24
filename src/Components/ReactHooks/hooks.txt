@@ -1,0 +1,18 @@
+
+1. Hooks are a new addition in React 16.8. They let you use state and other
+   React features without writing a class
+   
+   Hooks solves the problem of code reuse across components. they are
+   written without classes. This does not mean that React is getting rid
+   of classes, but hooks is just an alternate approach.
+
+   2. React applications are formed by composing different components
+      There are 2 types of component
+
+   .Stateful components(Class Components)
+   .Stateless components(Function Components) we cannot manage state inside functional component
+   but using hooks we can manage the state in function based component
+
+   State is only available in class component because a class component
+   extends Component class from React which makes the React's State available 
+   to the component   
