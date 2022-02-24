@@ -21,6 +21,7 @@ import HooksOne from "./Components/ReactHooks/HooksOne";
 import HooksTwo from "./Components/ReactHooks/HooksTwo";
 import HooksThree from "./Components/ReactHooks/HooksThree";
 import HooksFour from "./Components/ReactHooks/HooksFour";
+import StateAPI from "./Components/StateAPI/StateAPI";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
           <Route exact path="/hooks2" element={<HooksTwo />} />
           <Route exact path="/hooks3" element={<HooksThree />} />
           <Route exact path="/hooks4" element={<HooksFour />} />
+          <Route exact path="/stateapi" element={<StateAPI/>} />
         </Routes>
       </BrowserRouter>
     </div>
