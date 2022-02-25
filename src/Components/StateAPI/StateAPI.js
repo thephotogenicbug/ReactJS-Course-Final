@@ -7,8 +7,8 @@ class StateAPI extends Component {
     };
   }
 
-  getData = () => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+  getData = async () => {
+    await fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
       .then((result) => this.setState({ citylist: result }));
   };

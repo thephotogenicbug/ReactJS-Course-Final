@@ -22,6 +22,10 @@ import HooksTwo from "./Components/ReactHooks/HooksTwo";
 import HooksThree from "./Components/ReactHooks/HooksThree";
 import HooksFour from "./Components/ReactHooks/HooksFour";
 import StateAPI from "./Components/StateAPI/StateAPI";
+import StateAPIOne from "./Components/StateAPI/StateAPI1";
+import StateAPI2 from "./Components/StateAPI/StateAPI2";
+import StateAPIThree from "./Components/StateAPI/StateAPI3";
+import TestAPI from "./Components/StateAPI/TestAPI";
 
 function App() {
   return (
@@ -48,7 +52,11 @@ function App() {
           <Route exact path="/hooks2" element={<HooksTwo />} />
           <Route exact path="/hooks3" element={<HooksThree />} />
           <Route exact path="/hooks4" element={<HooksFour />} />
-          <Route exact path="/stateapi" element={<StateAPI/>} />
+          <Route exact path="/stateapi" element={<StateAPI />} />
+          <Route exact path="/stateapi1" element={<StateAPIOne />} />
+          <Route exact path="/stateapi2" element={<StateAPI2 />} />
+          <Route exact path="/stateapi3" element={<StateAPIThree />} />
+          <Route exact path="/hooksapi1" element={<TestAPI />} />
         </Routes>
       </BrowserRouter>
     </div>
