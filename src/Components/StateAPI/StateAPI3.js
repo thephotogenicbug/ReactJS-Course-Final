@@ -7,25 +7,21 @@ class StateAPIThree extends Component {
       userlist: [],
       name: "",
       email: "",
-      gender: "",
-      status: "",
+      message: "",
       msg: "",
+      deletemsg: "",
     };
   }
 
   getUserData = () => {
-    let user = "https://6218b17f1a1ba20cbaa85f70.mockapi.io/api/v2/users";
-    axios.get(user).then((response) => {
+    let url = "http://localhost:4000/v1/readuser";
+    axios.get(url).then((response) => {
       console.log(response.data);
       this.setState({
         userlist: response.data,
       });
     });
   };
-
-  componentDidMount() {
-    this.getUserData();
-  }
 
   processName = (obj) => {
     this.setState({
@@ -39,58 +35,43 @@ class StateAPIThree extends Component {
     });
   };
 
-  processGender = (obj) => {
+  processMessage = (obj) => {
     this.setState({
-      gender: obj.target.value,
+      message: obj.target.value,
     });
   };
 
-  processStatus = (obj) => {
-    this.setState({
-      status: obj.target.value,
-    });
-  };
-
-  saveData = () => {
-    this.setState({
-      msg: "Please wait processing.....",
-      userlist: [],
-    });
-
-    let url = "https://6218b17f1a1ba20cbaa85f70.mockapi.io/api/v2/users";
-    let input = new FormData();
-
-    input.append("name", this.state.name);
-    input.append("email", this.state.email);
-    input.append("gender", this.state.gender);
-    input.append("status", this.state.status);
+  save = () => {
+    var url = "http://localhost:4000/v1/newuser";
+    var input = {
+      name: this.state.name,
+      email: this.state.email,
+      message: this.state.message,
+    };
     axios.post(url, input).then((response) => {
-      console.log(response.data);
       this.setState({
+        msg: response.data.message,
         name: "",
         email: "",
-        gender: "",
-        status: "",
+        message: "",
       });
       this.getUserData();
     });
   };
 
-  DeleteData = (recordid) => {
-    this.setState({
-      msg: "Please wait Processing.....",
-      userlist: [],
-    });
-    let url = "https://6218b17f1a1ba20cbaa85f70.mockapi.io/api/v2/users";
-    let input = new FormData();
-    input.append("id", recordid);
-    axios.post(url, input).then((response) => {
+  delete = (id) => {
+    let url = `http://localhost:4000/v1/deleteuser/${id}`;
+    axios.delete(url).then((response) => {
       this.setState({
-        msg: response.data,
+        deletemsg: response.data.message,
       });
       this.getUserData();
     });
   };
+
+  componentDidMount() {
+    this.getUserData();
+  }
 
   render() {
     return (
@@ -99,6 +80,7 @@ class StateAPIThree extends Component {
           <div className="col-md-3 mt-4">
             <div className="bg-light p-2">
               <h4>Add New Record</h4>
+              <p className="text-success">{this.state.msg}</p>
               <div className="form-group">
                 <label>Name</label>
                 <input
@@ -118,52 +100,42 @@ class StateAPIThree extends Component {
                 />
               </div>
               <div className="form-group">
-                <label>Gender</label>
+                <label>Message</label>
                 <input
                   type="text"
                   className="form-control"
-                  onChange={this.processGender}
-                  value={this.state.gender}
-                />
-              </div>
-              <div className="form-group">
-                <label>Status</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  onChange={this.processStatus}
-                  value={this.state.status}
+                  onChange={this.processMessage}
+                  value={this.state.message}
                 />
               </div>
               <br />
-              <button className="btn btn-success" onClick={this.saveData}>
+              <button className="btn btn-success" onClick={this.save}>
                 Save Record
               </button>
             </div>
           </div>
           <div className="col-md-9 mt-4">
+            <p className="text-danger">{this.state.deletemsg}</p>
             <table className="table table-bordered">
               <thead>
                 <tr>
                   <th>Name</th>
                   <th>Email ID</th>
-                  <th>Gender</th>
-                  <th>Status</th>
+                  <th>Message</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-                {this.state.userlist.map((xuser) => {
+                {this.state.userlist.map((xuser, key) => {
                   return (
-                    <tr>
+                    <tr key={key}>
                       <td>{xuser.name}</td>
                       <td>{xuser.email}</td>
-                      <td>{xuser.gender}</td>
-                      <td>{xuser.status}</td>
+                      <td>{xuser.message}</td>
                       <td>
                         <button
                           className="btn btn-danger btn-sm"
-                          onClick={this.DeleteData.bind(this, xuser.id)}
+                          onClick={this.delete.bind(this, xuser._id)}
                         >
                           Delete
                         </button>

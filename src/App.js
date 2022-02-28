@@ -26,6 +26,7 @@ import StateAPIOne from "./Components/StateAPI/StateAPI1";
 import StateAPI2 from "./Components/StateAPI/StateAPI2";
 import StateAPIThree from "./Components/StateAPI/StateAPI3";
 import TestAPI from "./Components/StateAPI/TestAPI";
+import API from "./Components/HooksAPI/HookAPI";
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
           <Route exact path="/stateapi2" element={<StateAPI2 />} />
           <Route exact path="/stateapi3" element={<StateAPIThree />} />
           <Route exact path="/hooksapi1" element={<TestAPI />} />
+          <Route exact path="/hooksapi2" element={<API />} />
         </Routes>
       </BrowserRouter>
     </div>
