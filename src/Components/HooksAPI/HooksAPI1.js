@@ -7,7 +7,8 @@ const HooksAPIOne = () => {
   const [Message, updateMessage] = useState("");
 
   const saveData = () => {
-    var url = "http://localhost:4000/v1/newuser";
+    updateMessage("");
+    var url = "https://react-demo-api.herokuapp.com/v1/newuser";
     var input = { name: name, email: email, message: message };
     console.log(input);
     axios.post(url, input).then((response) => {
@@ -21,7 +22,7 @@ const HooksAPIOne = () => {
   const [userdata, updateUserData] = useState([]);
 
   const fetchData = () => {
-    var url = "http://localhost:4000/v1/readuser";
+    var url = "https://react-demo-api.herokuapp.com/v1/readuser";
     fetch(url)
       .then((response) => response.json())
       .then((alldata) => updateUserData(alldata));
@@ -34,9 +35,10 @@ const HooksAPIOne = () => {
   const [deletedata, updateDelete] = useState("");
 
   const deleteData = (id) => {
-    var url = `http://localhost:4000/v1/deleteuser/${id}`;
+    updateDelete("");
+    var url = `https://react-demo-api.herokuapp.com/v1/deleteuser/${id}`;
     axios.delete(url).then((response) => {
-       updateDelete(response.data.message)
+      updateDelete(response.data.message);
     });
   };
 

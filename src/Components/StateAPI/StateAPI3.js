@@ -14,7 +14,7 @@ class StateAPIThree extends Component {
   }
 
   getUserData = () => {
-    let url = "http://localhost:4000/v1/readuser";
+    let url = "https://react-demo-api.herokuapp.com/v1/readuser";
     axios.get(url).then((response) => {
       console.log(response.data);
       this.setState({
@@ -42,7 +42,10 @@ class StateAPIThree extends Component {
   };
 
   save = () => {
-    var url = "http://localhost:4000/v1/newuser";
+    this.setState({
+      msg:""
+    })
+    var url = "https://react-demo-api.herokuapp.com/v1/newuser";
     var input = {
       name: this.state.name,
       email: this.state.email,
@@ -60,7 +63,10 @@ class StateAPIThree extends Component {
   };
 
   delete = (id) => {
-    let url = `http://localhost:4000/v1/deleteuser/${id}`;
+     this.setState({
+       deletemsg: "",
+     });
+    let url = `https://react-demo-api.herokuapp.com/v1/deleteuser/${id}`;
     axios.delete(url).then((response) => {
       this.setState({
         deletemsg: response.data.message,
