@@ -28,6 +28,7 @@ import StateAPIThree from "./Components/StateAPI/StateAPI3";
 import TestAPI from "./Components/StateAPI/TestAPI";
 import API from "./Components/HooksAPI/HookAPI";
 import HooksAPIOne from "./Components/HooksAPI/HooksAPI1";
+import Validation from "./Components/ReactState/validation";
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
           <Route exact path="/hooksapi1" element={<TestAPI />} />
           <Route exact path="/hooksapi2" element={<API />} />
           <Route exact path="/hooksapi3" element={<HooksAPIOne />} />
+          <Route exact path="/statevalidation" element={<Validation />} />
         </Routes>
       </BrowserRouter>
     </div>
